@@ -1,0 +1,6 @@
+https://pypi.org/project/instabot/
+https://github.com/ohld/igbot/blob/master/instabot/bot/bot.py#L86
+https://instagrambot.github.io/docs/en/How_to_use.html
+https://github.com/ohld/igbot/blob/master/examples/follow_user_followers.py
+https://github.com/ohld/igbot/blob/master/examples/follow_user_following.py
+https://github.com/ohld/igbot/tree/master/examples
