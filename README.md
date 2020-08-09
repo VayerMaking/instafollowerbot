@@ -14,8 +14,8 @@ a bot for gathering more followers on instagram
 
 
 
-    1. da sledva followeri na daden chovek
-    2. da sledva tezi koito toi sledva
-    3. da trursi po hashtagove i da follow-va
-    4. da commentira???
-    5. da pishe v dm's
+     da sledva followeri na daden chovek
+     da sledva tezi koito toi sledva
+     da trursi po hashtagove i da follow-va
+     da commentira???
+     da pishe v dm's
