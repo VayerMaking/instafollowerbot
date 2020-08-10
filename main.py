@@ -37,10 +37,10 @@ def send( message ):
     # return back to the calling function with the result
     return result.decode("utf-8")
 '''
-
+username  = "viktormatias"
 try:
     #bot.upload_photo("myimg.jpg",caption)
-    bot.follow_followers(username)
+    #bot.follow_followers(username)
     #follow-va vs hora koito dadeniqt username sledva
     bot.follow_following(username)
     #follow-va vs hora koito sledvat dadeniqt username
