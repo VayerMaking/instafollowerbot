@@ -23,3 +23,5 @@ a bot for gathering more followers on instagram
      da commentira???
      
      da pishe v dm's
+
+     da tursi hora i ot da zapusva follow-erite im v.txt file i ottam tva da se povtarq za po-golqm reach 
