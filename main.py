@@ -21,7 +21,7 @@ def index():
 
 @app.route('/signup', methods = ['POST'])
 def signup():
-    email = request.form['username']
+    username = request.form['username']
     #print("The email address is '" + email + "'")
     return redirect('/')
 
@@ -52,7 +52,7 @@ def send( message ):
     # return back to the calling function with the result
     return result.decode("utf-8")
 '''
-username  = "asdf"
+
 
 try:
     #bot.upload_photo("myimg.jpg",caption)
