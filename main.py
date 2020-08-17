@@ -45,6 +45,10 @@ def form_example():
                   <input type="submit" value="Submit"><br>
               </form>'''
 
+@app.route('/result')
+def results():
+    return uname
+
 bot = Bot()
 bot.login(username = os.environ['config.username'], password = os.environ['config.password'])
 '''
