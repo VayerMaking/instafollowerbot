@@ -9,7 +9,7 @@ from instabot import Bot
 from datetime import datetime
 import http.client
 import sys
-import config
+#import config
 from flask import request, redirect, render_template
 from flask import Flask
 

@@ -5,4 +5,3 @@ instabot
 flask
 bs4
 pandas
-config
