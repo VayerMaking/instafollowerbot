@@ -1,1 +1,1 @@
-web: gunicorn app:instafollowerbot
+web: gunicorn main:app
