@@ -3,3 +3,4 @@ config/
 __pycache__/
 Pipfile
 Pipfile.lock
+dump.rdb
