@@ -15,7 +15,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-uname = "asdf"
+
 
 @app.route('/')
 def index():
@@ -24,7 +24,6 @@ def index():
 @app.route('/signup', methods = ['POST'])
 def signup():
     username = request.form['username']
-    uname = username
     #print("The email address is '" + email + "'")
     return redirect('/')
 
@@ -61,7 +60,7 @@ try:
     #bot.upload_photo("myimg.jpg",caption)
     #bot.follow_followers(username)
     #follow-va vs hora koito dadeniqt username sledva
-    bot.follow_following(username)
+    #bot.follow_following(username)
     #follow-va vs hora koito sledvat dadeniqt username
     #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
 except:
