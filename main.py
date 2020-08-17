@@ -28,7 +28,7 @@ def signup():
 
 
 bot = Bot()
-bot.login(username = config.username, password = config.password)
+bot.login(username = os.environ['username'], password = os.environ['password'])
 '''
 def send( message ):
 
