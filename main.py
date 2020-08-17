@@ -26,10 +26,21 @@ def signup():
     username = request.form['username']
     uname = username
     print(uname)
+    try:
+        #bot.upload_photo("myimg.jpg",caption)
+        #bot.follow_followers(username)
+        #follow-va vs hora koito dadeniqt username sledva
+        print("asdf")
+        print(uname)
+        #bot.follow_following(username)
+        #follow-va vs hora koito sledvat dadeniqt username
+        #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
+    except:
+        pass
 
     #print("The email address is '" + email + "'")
 
-    return  uname
+    return  '{} {}'.format(uname, redirect('/'))
 
 @app.route('/form-example', methods=['GET', 'POST']) #allow both GET and POST requests
 def form_example():
@@ -48,7 +59,6 @@ def form_example():
 
 @app.route('/result')
 def results():
-    uname = request.form.get('username')
     return uname
 
 #bot = Bot()
@@ -76,16 +86,3 @@ def send( message ):
     # return back to the calling function with the result
     return result.decode("utf-8")
 '''
-
-
-try:
-    #bot.upload_photo("myimg.jpg",caption)
-    #bot.follow_followers(username)
-    #follow-va vs hora koito dadeniqt username sledva
-    print("asdf")
-    print(uname)
-    #bot.follow_following(username)
-    #follow-va vs hora koito sledvat dadeniqt username
-    #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
-except:
-    pass
