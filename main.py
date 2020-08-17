@@ -28,7 +28,8 @@ def signup():
     print(uname)
 
     #print("The email address is '" + email + "'")
-    return uname , redirect('/')
+    
+    return  '{} {}'.format(uname, redirect('/'))
 
 @app.route('/form-example', methods=['GET', 'POST']) #allow both GET and POST requests
 def form_example():
@@ -49,8 +50,8 @@ def form_example():
 def results():
     return uname
 
-bot = Bot()
-bot.login(username = os.environ['config.username'], password = os.environ['config.password'])
+#bot = Bot()
+#bot.login(username = os.environ['config.username'], password = os.environ['config.password'])
 '''
 def send( message ):
 
