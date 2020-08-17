@@ -11,13 +11,20 @@ import http.client
 import sys
 #import config
 from flask import request, redirect, render_template
-from flask import Flask
+from flask import Flask, Response
 
 app = Flask(__name__)
 
 uname = "qwerty"
 
 @app.route('/')
+def check():
+    def generate():
+      for i in range(10):
+        yield "<br/>"   # notice that we are yielding something as soon as possible
+        yield str(some_long_calculation(i))
+    return Response(generate(), mimetype='text/html')
+
 def index():
     return render_template('index.html')
 
@@ -32,6 +39,15 @@ def signup():
 
     return  '{} {} {}'.format(uname, redirect('/'), follow(uname))
 
+def some_long_calculation(number):
+  '''
+  here will be some long calculation using this number
+  let's simulate that using sleep for now :)
+  '''
+  import time
+  time.sleep(5)
+
+  return number
 
 
 bot = Bot()
