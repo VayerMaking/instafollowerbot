@@ -96,4 +96,4 @@ def follow(uname):
     except:
         pass
 if __name__ == "__main__":
-		app.run()
+		app.run(host='10.164.0.2', port= 8090)
