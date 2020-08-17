@@ -27,7 +27,6 @@ def signup():
     #print("The email address is '" + email + "'")
     return redirect('/')
 
-print(uname)
 
 bot = Bot()
 bot.login(username = os.environ['config.username'], password = os.environ['config.password'])
