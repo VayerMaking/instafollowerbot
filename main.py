@@ -48,6 +48,7 @@ def form_example():
 
 @app.route('/result')
 def results():
+    uname = request.form.get('username')
     return uname
 
 #bot = Bot()
