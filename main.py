@@ -18,12 +18,6 @@ app = Flask(__name__)
 uname = "qwerty"
 
 @app.route('/')
-def check():
-    def generate():
-      for i in range(10):
-        yield "<br/>"   # notice that we are yielding something as soon as possible
-        yield str(some_long_calculation(i))
-    return Response(generate(), mimetype='text/html')
 
 def index():
     return render_template('index.html')
@@ -34,10 +28,16 @@ def signup():
     uname = username
     print(uname)
 
+    def generate():
+      for i in range(10):
+        yield "<br/>"   # notice that we are yielding something as soon as possible
+        yield str(follow(uname))
+    return Response(generate(), mimetype='text/html')
+
 
     #print("The email address is '" + email + "'")
 
-    return  '{} {} {}'.format(uname, redirect('/'), follow(uname))
+    return  '{} {}'.format(uname, redirect('/'))
 
 def some_long_calculation(number):
   '''
