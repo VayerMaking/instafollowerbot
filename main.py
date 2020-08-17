@@ -10,7 +10,20 @@ from datetime import datetime
 import http.client
 import sys
 import config
+from flask import request, redirect, render_template
+from flask import Flask
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/signup', methods = ['POST'])
+def signup():
+    email = request.form['username']
+    #print("The email address is '" + email + "'")
+    return redirect('/')
+
+app.run(host='0.0.0.0', port= 8090)
 
 bot = Bot()
 bot.login(username = config.username, password = config.password)
