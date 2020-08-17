@@ -95,3 +95,5 @@ def follow(uname):
         #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
     except:
         pass
+if __name__ == "__main__":
+		app.run()
