@@ -59,7 +59,7 @@ def send( message ):
     # return back to the calling function with the result
     return result.decode("utf-8")
 '''
-def follow(uname){
+def follow(uname):
     try:
         #bot.upload_photo("myimg.jpg",caption)
         #bot.follow_followers(username)
@@ -71,5 +71,3 @@ def follow(uname){
         #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
     except:
         pass
-
-}
