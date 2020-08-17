@@ -15,7 +15,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-uname = "asdf"
+uname = "qwerty"
 
 @app.route('/')
 def index():
@@ -24,6 +24,8 @@ def index():
 @app.route('/signup', methods = ['POST'])
 def signup():
     username = request.form['username']
+    uname = language
+
     #print("The email address is '" + email + "'")
     return redirect('/')
 
@@ -32,7 +34,6 @@ def form_example():
     if request.method == 'POST':  #this block is only entered when the form is submitted
         language = request.form.get('language')
         framework = request.form['framework']
-        uname = language
 
         return '''<h1>The language value is: {}</h1>
                   <h1>The framework value is: {}</h1>'''.format(language, framework)
