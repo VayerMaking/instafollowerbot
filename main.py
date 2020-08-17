@@ -43,7 +43,7 @@ def form_example():
                   Framework: <input type="text" name="framework"><br>
                   <input type="submit" value="Submit"><br>
               </form>'''
-print(uname)
+
 bot = Bot()
 bot.login(username = os.environ['config.username'], password = os.environ['config.password'])
 '''
@@ -76,6 +76,7 @@ try:
     #bot.follow_followers(username)
     #follow-va vs hora koito dadeniqt username sledva
     print("asdf")
+    print(uname)
     #bot.follow_following(username)
     #follow-va vs hora koito sledvat dadeniqt username
     #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
