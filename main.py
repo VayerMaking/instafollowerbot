@@ -37,7 +37,7 @@ def signup():
       #time.sleep(5)
       follow(uname)
 
-      return number
+      return uname
 
 
     def generate():
