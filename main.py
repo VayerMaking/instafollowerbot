@@ -60,6 +60,7 @@ try:
     #bot.upload_photo("myimg.jpg",caption)
     #bot.follow_followers(username)
     #follow-va vs hora koito dadeniqt username sledva
+    print("asdf")
     #bot.follow_following(username)
     #follow-va vs hora koito sledvat dadeniqt username
     #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
