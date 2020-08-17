@@ -25,7 +25,7 @@ def signup():
     #print("The email address is '" + email + "'")
     return redirect('/')
 
-app.run(host='0.0.0.0', port= 8090)
+
 
 bot = Bot()
 bot.login(username = config.username, password = config.password)
