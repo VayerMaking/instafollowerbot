@@ -52,7 +52,7 @@ def send( message ):
     # return back to the calling function with the result
     return result.decode("utf-8")
 '''
-username  = config.username_for_search
+username  = "asdf"
 
 try:
     #bot.upload_photo("myimg.jpg",caption)
