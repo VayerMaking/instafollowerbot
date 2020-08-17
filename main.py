@@ -31,7 +31,8 @@ def signup():
     def generate():
       for i in range(10):
         yield "<br/>"   # notice that we are yielding something as soon as possible
-        yield str(follow(uname))
+        yield str(some_long_calculation(i))
+
     return Response(generate(), mimetype='text/html')
 
 
@@ -45,7 +46,8 @@ def some_long_calculation(number):
   let's simulate that using sleep for now :)
   '''
   import time
-  time.sleep(5)
+  #time.sleep(5)
+  follow(uname)
 
   return number
 
