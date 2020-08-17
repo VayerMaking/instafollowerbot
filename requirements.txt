@@ -3,3 +3,10 @@ gunicorn
 requests
 instabot
 flask
+bs4
+pandas
+re
+os
+time
+urllib.request
+http.client
