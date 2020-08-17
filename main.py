@@ -25,6 +25,7 @@ def index():
 def signup():
     username = request.form['username']
     uname = username
+    print(uname)
 
     #print("The email address is '" + email + "'")
     return redirect('/')
