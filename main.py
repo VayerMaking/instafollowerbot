@@ -32,7 +32,7 @@ def form_example():
     if request.method == 'POST':  #this block is only entered when the form is submitted
         language = request.form.get('language')
         framework = request.form['framework']
-        global uname = language
+        uname = language
 
         return '''<h1>The language value is: {}</h1>
                   <h1>The framework value is: {}</h1>'''.format(language, framework)
