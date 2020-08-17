@@ -24,7 +24,7 @@ def index():
 @app.route('/signup', methods = ['POST'])
 def signup():
     username = request.form['username']
-    uname = language
+    uname = username
 
     #print("The email address is '" + email + "'")
     return redirect('/')
