@@ -59,6 +59,16 @@ def send( message ):
     # return back to the calling function with the result
     return result.decode("utf-8")
 '''
+
+from rq import Queue
+from worker import conn
+
+q = Queue(connection=conn)
+
+from utils import count_words_at_url
+
+result = q.enqueue(count_words_at_url, 'http://heroku.com')
+
 def follow(uname):
     try:
         #bot.upload_photo("myimg.jpg",caption)
