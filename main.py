@@ -9,6 +9,7 @@ from instabot import Bot
 from datetime import datetime
 import http.client
 import sys
+import config
 #import config
 from flask import request, redirect, render_template
 from flask import Flask, Response
@@ -55,7 +56,7 @@ def signup():
 
 
 bot = Bot()
-bot.login(username = os.environ['config.username'], password = os.environ['config.password'])
+bot.login(username = config.username, password = config.password)
 '''
 def send( message ):
 
