@@ -1,2 +1,5 @@
 -i https://pypi.org/simple
 gunicorn
+requests
+instabot
+flask
