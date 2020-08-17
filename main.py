@@ -26,17 +26,7 @@ def signup():
     username = request.form['username']
     uname = username
     print(uname)
-    try:
-        #bot.upload_photo("myimg.jpg",caption)
-        #bot.follow_followers(username)
-        #follow-va vs hora koito dadeniqt username sledva
-        print("asdf")
-        print(uname)
-        bot.follow_following(uname)
-        #follow-va vs hora koito sledvat dadeniqt username
-        #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
-    except:
-        pass
+    follow(uname)
 
     #print("The email address is '" + email + "'")
 
@@ -69,3 +59,17 @@ def send( message ):
     # return back to the calling function with the result
     return result.decode("utf-8")
 '''
+def follow(uname){
+    try:
+        #bot.upload_photo("myimg.jpg",caption)
+        #bot.follow_followers(username)
+        #follow-va vs hora koito dadeniqt username sledva
+        print("asdf")
+        print(uname)
+        bot.follow_following(uname)
+        #follow-va vs hora koito sledvat dadeniqt username
+        #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
+    except:
+        pass
+
+}
