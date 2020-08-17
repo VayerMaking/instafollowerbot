@@ -15,7 +15,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-
+global uname
 
 @app.route('/')
 def index():
@@ -32,6 +32,7 @@ def form_example():
     if request.method == 'POST':  #this block is only entered when the form is submitted
         language = request.form.get('language')
         framework = request.form['framework']
+        uname = language
 
         return '''<h1>The language value is: {}</h1>
                   <h1>The framework value is: {}</h1>'''.format(language, framework)
@@ -41,7 +42,7 @@ def form_example():
                   Framework: <input type="text" name="framework"><br>
                   <input type="submit" value="Submit"><br>
               </form>'''
-              
+print(uname)          
 bot = Bot()
 bot.login(username = os.environ['config.username'], password = os.environ['config.password'])
 '''
