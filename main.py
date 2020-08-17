@@ -15,6 +15,8 @@ from flask import Flask
 
 app = Flask(__name__)
 
+uname = "asdf"
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -22,10 +24,11 @@ def index():
 @app.route('/signup', methods = ['POST'])
 def signup():
     username = request.form['username']
+    uname = username
     #print("The email address is '" + email + "'")
     return redirect('/')
 
-print(username)
+print(uname)
 
 bot = Bot()
 bot.login(username = os.environ['config.username'], password = os.environ['config.password'])
