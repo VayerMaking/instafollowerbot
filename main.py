@@ -28,6 +28,18 @@ def signup():
     uname = username
     print(uname)
 
+    def some_long_calculation(number, uname):
+      '''
+      here will be some long calculation using this number
+      let's simulate that using sleep for now :)
+      '''
+      import time
+      #time.sleep(5)
+      follow(uname)
+
+      return number
+
+
     def generate():
       for i in range(10):
         yield "<br/>"   # notice that we are yielding something as soon as possible
@@ -40,16 +52,6 @@ def signup():
 
     return  '{} {}'.format(uname, redirect('/'))
 
-def some_long_calculation(number, uname):
-  '''
-  here will be some long calculation using this number
-  let's simulate that using sleep for now :)
-  '''
-  import time
-  #time.sleep(5)
-  follow(uname)
-
-  return number
 
 
 bot = Bot()
