@@ -31,7 +31,7 @@ def signup():
     def generate():
       for i in range(10):
         yield "<br/>"   # notice that we are yielding something as soon as possible
-        yield str(some_long_calculation(i))
+        yield str(some_long_calculation(i, uname))
 
     return Response(generate(), mimetype='text/html')
 
@@ -40,7 +40,7 @@ def signup():
 
     return  '{} {}'.format(uname, redirect('/'))
 
-def some_long_calculation(number):
+def some_long_calculation(number, uname):
   '''
   here will be some long calculation using this number
   let's simulate that using sleep for now :)
