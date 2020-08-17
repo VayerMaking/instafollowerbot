@@ -28,7 +28,7 @@ def signup():
     uname = username
     print(uname)
 
-    def some_long_calculation(number, uname):
+    def some_long_calculation(uname):
       '''
       here will be some long calculation using this number
       let's simulate that using sleep for now :)
@@ -41,9 +41,9 @@ def signup():
 
 
     def generate():
-      for i in range(10):
+      for i in range(100):
         yield "<br/>"   # notice that we are yielding something as soon as possible
-        yield str(some_long_calculation(i, uname))
+        yield str(some_long_calculation(uname))
 
     return Response(generate(), mimetype='text/html')
 
