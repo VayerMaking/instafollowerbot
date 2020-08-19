@@ -32,6 +32,10 @@ def signup():
     username = request.form['username']
     uname = username
     print(uname)
+    url = 'https://www.instagram.com/' + uname
+    r = requests.get(url).text
+    followers = re.search('"edge_followed_by":{"count":([0-9]+)}',r).group(1)
+    print(followers)
     #############
     class ThreadingExample(object):
         """ Threading example class
@@ -55,19 +59,15 @@ def signup():
             #while True:
                 # Do something
                 #print('Doing something imporant in the background')
-            url = 'https://www.instagram.com/' + uname
-            r = requests.get(url).text
-            followers = re.search('"edge_followed_by":{"count":([0-9]+)}',r).group(1)
-            print(followers)
+
             follow(uname)
             time.sleep(self.interval)
-            return followers
 
     #############
     #follow(uname)
     example = ThreadingExample()
 
-    return  render_template('index.html', followers)
+    return  redirect('/')
 
 
 
