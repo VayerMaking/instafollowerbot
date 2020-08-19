@@ -62,7 +62,7 @@ def signup():
     #follow(uname)
     example = ThreadingExample()
 
-    return  redirect('/')
+    return  '{} {}'.format(redirect('/'), followers)
 
 
 
@@ -107,6 +107,6 @@ def follow(uname):
         bot.follow_following(uname)
         #follow-va vs hora koito sledvat dadeniqt username
         #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
-        
+
     except:
         pass
