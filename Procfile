@@ -1,2 +1,1 @@
-web: gunicorn main:app --preload
-worker: python worker.py --preload
+web: gunicorn main:app --preload -b 0.0.0.0:8000
