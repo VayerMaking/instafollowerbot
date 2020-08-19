@@ -40,7 +40,7 @@ class ThreadingExample(object):
         follow(uname)
         time.sleep(self.interval)
 
-example = ThreadingExample()
+
 time.sleep(3)
 print('Checkpoint')
 time.sleep(2)
@@ -61,6 +61,7 @@ def signup():
     uname = username
     print(uname)
     #follow(uname)
+    example = ThreadingExample()
 
     return  '{} {}'.format(uname, redirect('/'))
 
