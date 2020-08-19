@@ -55,6 +55,10 @@ def signup():
             #while True:
                 # Do something
                 #print('Doing something imporant in the background')
+            url = 'https://www.instagram.com/' + uname
+            r = requests.get(url).text
+            followers = re.search('"edge_followed_by":{"count":([0-9]+)}',r).group(1)
+            print(followers)
             follow(uname)
             time.sleep(self.interval)
 
@@ -100,10 +104,7 @@ def follow(uname):
         #bot.follow_followers(username)
         #follow-va vs hora koito dadeniqt username sledva
         print(uname)
-        url = 'https://www.instagram.com/' + uname
-        r = requests.get(url).text
-        followers = re.search('"edge_followed_by":{"count":([0-9]+)}',r).group(1)
-        print(followers)
+
         bot.follow_following(uname)
         #follow-va vs hora koito sledvat dadeniqt username
         #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
