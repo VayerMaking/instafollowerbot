@@ -58,7 +58,7 @@ def signup():
     uname = username
     print(uname)
     #follow(uname)
-    example = ThreadingExample(uname)
+    example = ThreadingExample()
 
     return  redirect('/')
 
