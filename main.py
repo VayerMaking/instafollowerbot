@@ -34,11 +34,11 @@ class ThreadingExample(object):
 
     def run(self):
         """ Method that runs forever """
-        while True:
+        #while True:
             # Do something
-            print('Doing something imporant in the background')
-
-            time.sleep(self.interval)
+            #print('Doing something imporant in the background')
+        follow(uname)
+        time.sleep(self.interval)
 
 example = ThreadingExample()
 time.sleep(3)
@@ -60,7 +60,7 @@ def signup():
     username = request.form['username']
     uname = username
     print(uname)
-    follow(uname)
+    #follow(uname)
 
     return  '{} {}'.format(uname, redirect('/'))
 
