@@ -34,10 +34,10 @@ def signup():
     print(uname)
     url = 'https://www.instagram.com/' + uname
     r = requests.get(url).text
-    #followers = re.search('"edge_followed_by":{"count":([0-9]+)}',r).group(1)
+    followers = re.search('"edge_followed_by":{"count":([0-9]+)}',r).group(1)
     print(url)
     print(r)
-    #print(followers)
+    #rint(followers)
     #############
     class ThreadingExample(object):
         """ Threading example class
