@@ -28,28 +28,7 @@ def signup():
     username = request.form['username']
     uname = username
     print(uname)
-
-    def some_long_calculation(uname):
-      '''
-      here will be some long calculation using this number
-      let's simulate that using sleep for now :)
-      '''
-      import time
-      #time.sleep(5)
-      follow(uname)
-
-      return uname
-
-
-    def generate():
-      for i in range(100):
-        yield "<br/>"   # notice that we are yielding something as soon as possible
-        yield str(some_long_calculation(uname))
-
-    return Response(generate(), mimetype='text/html')
-
-
-    #print("The email address is '" + email + "'")
+    follow(uname)
 
     return  '{} {}'.format(uname, redirect('/'))
 
