@@ -17,7 +17,7 @@ from flask import Flask, Response
 
 uname = "qwerty"
 
-class ThreadingExample(object,uname):
+class ThreadingExample(object):
     """ Threading example class
     The run() method will be started and it will run in the background
     until the application exits.
@@ -34,7 +34,7 @@ class ThreadingExample(object,uname):
         thread.daemon = True                            # Daemonize thread
         thread.start()                                  # Start the execution
 
-    def run(self, uname):
+    def run(self):
         """ Method that runs forever """
         #while True:
             # Do something
