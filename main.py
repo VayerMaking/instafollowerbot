@@ -68,7 +68,7 @@ def signup():
 
 
 bot = Bot()
-bot.login(username = config.username, password = config.password)
+bot.login(username = config.username, password = config.password, follow_delay = 60)
 '''
 def send( message ):
 
