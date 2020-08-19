@@ -24,7 +24,6 @@ app = Flask(__name__)
 
 
 @app.route('/')
-
 def index():
     return render_template('index.html')
 
@@ -100,10 +99,14 @@ def follow(uname):
         #bot.upload_photo("myimg.jpg",caption)
         #bot.follow_followers(username)
         #follow-va vs hora koito dadeniqt username sledva
-        print("asdf")
         print(uname)
+        url = 'https://www.instagram.com/' + uname
+        r = requests.get(url).text
+        followers = re.search('"edge_followed_by":{"count":([0-9]+)}',r).group(1)
+        print(followers)
         bot.follow_following(uname)
         #follow-va vs hora koito sledvat dadeniqt username
         #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
     except:
         pass
+    return followers
