@@ -61,6 +61,7 @@ def signup():
             print(followers)
             follow(uname)
             time.sleep(self.interval)
+            return followers
 
     #############
     #follow(uname)
