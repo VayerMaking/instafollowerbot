@@ -67,7 +67,7 @@ def signup():
 
 
 
-bot = Bot()
+bot = Bot(follow_delay = 60)
 bot.login(username = config.username, password = config.password)
 '''
 def send( message ):
@@ -102,7 +102,7 @@ def follow(uname):
         #follow-va vs hora koito dadeniqt username sledva
         print("asdf")
         print(uname)
-        bot.follow_following(follow_delay = 60, uname)
+        bot.follow_following(uname)
         #follow-va vs hora koito sledvat dadeniqt username
         #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
     except:
