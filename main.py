@@ -34,11 +34,11 @@ class ThreadingExample(object):
 
     def run(self):
         """ Method that runs forever """
-        #while True:
+        while True:
             # Do something
             #print('Doing something imporant in the background')
-        follow(uname)
-        time.sleep(self.interval)
+            follow(uname)
+            time.sleep(self.interval)
 
 
 time.sleep(3)
