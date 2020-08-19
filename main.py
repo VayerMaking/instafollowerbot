@@ -32,12 +32,7 @@ def signup():
     username = request.form['username']
     uname = username
     print(uname)
-    url = 'https://www.instagram.com/' + uname
-    r = requests.get(url).text
-    followers = re.search('"edge_followed_by":{"count":([0-9]+)}',r).group(1)
-    print(url)
-    print(r)
-    #rint(followers)
+    followers(uname)
     #############
     class ThreadingExample(object):
         """ Threading example class
@@ -99,7 +94,13 @@ def send( message ):
     return result.decode("utf-8")
 '''
 
-
+def followers (uname):
+    url = 'https://www.instagram.com/' + uname
+    r = requests.get(url).text
+    followers = re.search('"edge_followed_by":{"count":([0-9]+)}',r).group(1)
+    print(url)
+    print(r)
+    print(followers)
 
 def follow(uname):
     try:
