@@ -15,6 +15,8 @@ import config
 from flask import request, redirect, render_template
 from flask import Flask, Response
 
+uname = "qwerty"
+
 class ThreadingExample(object,uname):
     """ Threading example class
     The run() method will be started and it will run in the background
@@ -43,7 +45,7 @@ class ThreadingExample(object,uname):
 
 app = Flask(__name__)
 
-uname = "qwerty"
+
 
 @app.route('/')
 
