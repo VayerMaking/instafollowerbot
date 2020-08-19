@@ -66,7 +66,7 @@ def signup():
     #follow(uname)
     example = ThreadingExample()
 
-    return  '{} {}'.format(redirect('/'), followers)
+    return  render_template('index.html', followers)
 
 
 
