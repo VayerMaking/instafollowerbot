@@ -15,7 +15,7 @@ import config
 from flask import request, redirect, render_template
 from flask import Flask, Response
 
-class ThreadingExample(object):
+class ThreadingExample(object,uname):
     """ Threading example class
     The run() method will be started and it will run in the background
     until the application exits.
@@ -32,19 +32,14 @@ class ThreadingExample(object):
         thread.daemon = True                            # Daemonize thread
         thread.start()                                  # Start the execution
 
-    def run(self):
+    def run(self, uname):
         """ Method that runs forever """
-        while True:
+        #while True:
             # Do something
             #print('Doing something imporant in the background')
-            follow(uname)
-            time.sleep(self.interval)
+        follow(uname)
+        time.sleep(self.interval)
 
-
-time.sleep(3)
-print('Checkpoint')
-time.sleep(2)
-print('Bye')
 
 app = Flask(__name__)
 
@@ -61,9 +56,9 @@ def signup():
     uname = username
     print(uname)
     #follow(uname)
-    example = ThreadingExample()
+    example = ThreadingExample(uname)
 
-    return  '{} {}'.format(uname, redirect('/'))
+    return  redirect('/')
 
 
 
