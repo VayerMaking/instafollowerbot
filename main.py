@@ -110,6 +110,7 @@ def followers (uname):
     followers = followers.split(sep, 1)[0]
     print(followers)
     print(len(followers))
+    return followers
 
 
 def follow(uname):
