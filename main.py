@@ -97,21 +97,18 @@ def send( message ):
 '''
 
 def followers (uname):
-    URL = 'https://www.instagram.com/' + uname
+    URL = 'https://www.instagram.com/espn/'
     page = requests.get(URL)
 
     soup = BeautifulSoup(page.content, 'html.parser')
 
-    followers = soup.find('meta', {'property':'og:description'})
+    job_elems = soup.find('meta', {'property':'og:description'})
 
 
     #print(job_elems)
-    followerz  = str(followers)[15:]
+    asdf  = str(job_elems)[15:]
     sep = ' Followers'
-    followerz = followerz.split(sep, 1)[0]
-    print(followerz)
-    print(len(followerz))
-    return followerz
+    asdf = asdf.split(sep, 1)[0]
 
 
 def follow(uname):
