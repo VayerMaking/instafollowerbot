@@ -40,7 +40,7 @@ def signup():
     soup = BeautifulSoup(page.content, 'html.parser')
 
     job_elems = soup.find('meta', {'property':'og:description'})
-
+    print(job_elems)
     print(soup)
     asdf  = str(job_elems)[15:]
     sep = ' Followers'
