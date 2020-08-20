@@ -110,6 +110,8 @@ def followers (uname):
     asdf  = str(job_elems)[15:]
     sep = ' Followers'
     asdf = asdf.split(sep, 1)[0]
+    print(asdf)
+    print(len(asdf))
     return asdf
 
 def follow(uname):
