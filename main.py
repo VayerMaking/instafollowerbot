@@ -58,7 +58,8 @@ def signup():
                 # Do something
                 #print('Doing something imporant in the background')
 
-            follow(uname)
+            #follow(uname)
+            print("guza mi")
             time.sleep(self.interval)
 
     #############
