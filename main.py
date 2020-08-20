@@ -12,14 +12,12 @@ from datetime import datetime
 import http.client
 import sys
 import config
-#import config
+from igramscraper.instagram import Instagram
 from flask import request, redirect, render_template
 from flask import Flask, Response
 
-uname = "qwerty"
-
-
-
+uname = ""
+instagram = Instagram()
 app = Flask(__name__)
 
 
@@ -33,7 +31,7 @@ def signup():
     username = request.form['username']
     uname = username
     print(uname)
-    #followers(uname)
+    followers(uname)
 
     #print(qwerty)
     #############
@@ -59,19 +57,7 @@ def signup():
             #while True:
                 # Do something
                 #print('Doing something imporant in the background')
-            URL = 'https://www.instagram.com/' + uname
-            page = requests.get(URL)
 
-            soup = BeautifulSoup(page.content, 'html.parser')
-
-            job_elems = soup.find('meta', {'property':'og:description'})
-            print(job_elems)
-            print(soup)
-            asdf  = str(job_elems)[15:]
-            sep = ' Followers'
-            asdf = asdf.split(sep, 1)[0]
-            print(asdf)
-            print(len(asdf))
             #follow(uname)
             print("guza mi")
             time.sleep(self.interval)
@@ -111,9 +97,8 @@ def send( message ):
 '''
 
 def followers (uname):
-    print("a")
-    #print(len(asdf))
-    #return asdf
+    account = instagram.get_account(uname)
+    print(account.followed_by_count)
 
 def follow(uname):
     try:
