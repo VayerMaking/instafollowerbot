@@ -41,7 +41,7 @@ def signup():
 
     job_elems = soup.find('meta', {'property':'og:description'})
 
-
+    print(soup)
     asdf  = str(job_elems)[15:]
     sep = ' Followers'
     asdf = asdf.split(sep, 1)[0]
