@@ -33,8 +33,8 @@ def signup():
     username = request.form['username']
     uname = username
     print(uname)
-    qwerty = followers(uname)
-    print(qwerty)
+    followers(uname)
+    #print(qwerty)
     #############
     class ThreadingExample(object):
         """ Threading example class
@@ -111,7 +111,7 @@ def followers (uname):
     sep = ' Followers'
     asdf = asdf.split(sep, 1)[0]
     print(asdf)
-    print(len(asdf))
+    #print(len(asdf))
     return asdf
 
 def follow(uname):
