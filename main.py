@@ -42,11 +42,11 @@ def signup():
     job_elems = soup.find('meta', {'property':'og:description'})
 
 
-        #print(job_elems)
     asdf  = str(job_elems)[15:]
     sep = ' Followers'
     asdf = asdf.split(sep, 1)[0]
     print(asdf)
+    print(len(asdf))
     #print(qwerty)
     #############
     class ThreadingExample(object):
