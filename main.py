@@ -136,14 +136,14 @@ def followers (uname):
 
 
 
-# user name
-username = "_kokosaa_"
+        # user name
+        username = "_kokosaa_"
 
-# calling scrape function
-data = scrape_data(username)
+        # calling scrape function
+        data = scrape_data(username)
 
-# printing the info
-print(data)        
+        # printing the info
+        print(data)
 
 
 def follow(uname):
