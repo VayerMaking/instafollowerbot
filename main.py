@@ -96,12 +96,20 @@ def send( message ):
 '''
 
 def followers (uname):
-    URL = 'https://www.instagram.com/linaestadeviaje/'
+    URL = 'https://www.instagram.com/' + uname
     page = requests.get(URL)
-    soup = BeautifulSoup(page.content, 'html.parser')
-    data = json.loads(soup.find('script', type='application/ld+json').text)
 
-    followers = data['mainEntityofPage']['interactionStatistic']['userInteractionCount']
+    soup = BeautifulSoup(page.content, 'html.parser')
+
+    followers = soup.find('meta', {'property':'og:description'})
+
+
+    #print(job_elems)
+    followers  = str(followers)[15:]
+    sep = ' Followers'
+    followers = followers.split(sep, 1)[0]
+    print(followers)
+    print(len(followers))
 
 
 def follow(uname):

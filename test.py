@@ -1,54 +1,22 @@
 # importing libraries
 from bs4 import BeautifulSoup
 import requests
+import re
 
-# instagram URL
-URL = "https://www.instagram.com/{}/"
+import requests
+from bs4 import BeautifulSoup
 
-# parse function
-def parse_data(s):
+URL = 'https://www.instagram.com/espn/'
+page = requests.get(URL)
 
-    # creating a dictionary
-    data = {}
+soup = BeautifulSoup(page.content, 'html.parser')
 
-    # splittting the content
-    # then taking the first part
-    s = s.split("-")[0]
+job_elems = soup.find('meta', {'property':'og:description'})
 
-    # again splitting the content
-    s = s.split(" ")
 
-    # assigning the values
-    data['Followers'] = s[0]
-    data['Following'] = s[2]
-    data['Posts'] = s[4]
-
-    # returning the dictionary
-    return data
-
-# scrape function
-def scrape_data(username):
-
-    # getting the request from url
-    r = requests.get(URL.format(username))
-
-    # converting the text
-    s = BeautifulSoup(r.text, "html.parser")
-
-    # finding meta info
-    meta = s.find("meta", property ="og:description")
-
-    # calling parse method
-    return parse_data(meta.attrs['content'])
-
-# main function
-if __name__=="__main__":
-
-    # user name
-    username = "_kokosaa_"
-
-    # calling scrape function
-    data = scrape_data(username)
-
-    # printing the info
-    print(data)
+#print(job_elems)
+asdf  = str(job_elems)[15:]
+sep = ' Followers'
+asdf = asdf.split(sep, 1)[0]
+print(asdf)
+print(len(asdf))
