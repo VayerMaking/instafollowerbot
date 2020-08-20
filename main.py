@@ -98,9 +98,10 @@ def send( message ):
 def followers (uname):
     URL = 'https://www.instagram.com/linaestadeviaje/'
     page = requests.get(URL)
-
     soup = BeautifulSoup(page.content, 'html.parser')
-    followers = re.search('"edge_followed_by":{"count":(\d*)}', soup.prettify()).group(1)
+    data = json.loads(soup.find('script', type='application/ld+json').text)
+
+    followers = data['mainEntityofPage']['interactionStatistic']['userInteractionCount']
 
 
 def follow(uname):
