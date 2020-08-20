@@ -106,12 +106,12 @@ def followers (uname):
 
 
     #print(job_elems)
-    followers  = str(followers)[15:]
+    followers  = str(followerz)[15:]
     sep = ' Followers'
-    followers = followers.split(sep, 1)[0]
-    print(followers)
-    print(len(followers))
-    return followers
+    followerz = followerz.split(sep, 1)[0]
+    print(followerz)
+    print(len(followerz))
+    return followerz
 
 
 def follow(uname):
