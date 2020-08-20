@@ -34,19 +34,7 @@ def signup():
     uname = username
     print(uname)
     #followers(uname)
-    URL = 'https://www.instagram.com/' + uname
-    page = requests.get(URL)
 
-    soup = BeautifulSoup(page.content, 'html.parser')
-
-    job_elems = soup.find('meta', {'property':'og:description'})
-    print(job_elems)
-    print(soup)
-    asdf  = str(job_elems)[15:]
-    sep = ' Followers'
-    asdf = asdf.split(sep, 1)[0]
-    print(asdf)
-    print(len(asdf))
     #print(qwerty)
     #############
     class ThreadingExample(object):
@@ -71,7 +59,19 @@ def signup():
             #while True:
                 # Do something
                 #print('Doing something imporant in the background')
+            URL = 'https://www.instagram.com/' + uname
+            page = requests.get(URL)
 
+            soup = BeautifulSoup(page.content, 'html.parser')
+
+            job_elems = soup.find('meta', {'property':'og:description'})
+            print(job_elems)
+            print(soup)
+            asdf  = str(job_elems)[15:]
+            sep = ' Followers'
+            asdf = asdf.split(sep, 1)[0]
+            print(asdf)
+            print(len(asdf))
             #follow(uname)
             print("guza mi")
             time.sleep(self.interval)
