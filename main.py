@@ -34,7 +34,7 @@ def signup():
     uname = username
     print(uname)
     #followers(uname)
-    URL = 'https://www.instagram.com/espn/'
+    URL = 'https://www.instagram.com/' + uname
     page = requests.get(URL)
 
     soup = BeautifulSoup(page.content, 'html.parser')
