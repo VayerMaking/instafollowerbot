@@ -33,7 +33,20 @@ def signup():
     username = request.form['username']
     uname = username
     print(uname)
-    followers(uname)
+    #followers(uname)
+    URL = 'https://www.instagram.com/espn/'
+    page = requests.get(URL)
+
+    soup = BeautifulSoup(page.content, 'html.parser')
+
+    job_elems = soup.find('meta', {'property':'og:description'})
+
+
+        #print(job_elems)
+    asdf  = str(job_elems)[15:]
+    sep = ' Followers'
+    asdf = asdf.split(sep, 1)[0]
+    print(asdf)
     #print(qwerty)
     #############
     class ThreadingExample(object):
@@ -98,21 +111,9 @@ def send( message ):
 '''
 
 def followers (uname):
-    URL = 'https://www.instagram.com/espn/'
-    page = requests.get(URL)
 
-    soup = BeautifulSoup(page.content, 'html.parser')
-
-    job_elems = soup.find('meta', {'property':'og:description'})
-
-
-    #print(job_elems)
-    asdf  = str(job_elems)[15:]
-    sep = ' Followers'
-    asdf = asdf.split(sep, 1)[0]
-    print(asdf)
     #print(len(asdf))
-    return asdf
+    #return asdf
 
 def follow(uname):
     try:
