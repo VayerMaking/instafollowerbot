@@ -61,10 +61,10 @@ def signup():
 
         def run(self):
             """ Method that runs forever """
-
+            print( send( "<@&694256156549316699>" + " starting follow procedure for  " + uname) )
             #follow(uname)
             print("guza mi")
-            print( send( "<@&694256156549316699>" + "followed " + uname) )
+            print( send( "<@&694256156549316699>" + " followed " + uname) )
             time.sleep(self.interval)
 
 
