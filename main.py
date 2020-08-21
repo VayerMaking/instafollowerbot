@@ -31,7 +31,7 @@ def signup():
     username = request.form['username']
     uname = username
     print(uname)
-    followers = followers(uname)
+    followerz = followers(uname)
     print(followers)
     #print(qwerty)
     #############
