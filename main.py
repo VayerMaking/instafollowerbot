@@ -68,7 +68,8 @@ def signup():
     #follow(uname)
     example = ThreadingExample()
 
-    return "estimated time:", estimated_time
+    return  '{} {}'.format("estimated time:", estimated_time)
+
 
 
 
