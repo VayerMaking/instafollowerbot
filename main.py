@@ -16,10 +16,15 @@ from instaloader import Instaloader, Profile
 from flask import request, redirect, render_template
 from flask import Flask, Response
 
-uname = ""
+
 L = Instaloader()
+
 app = Flask(__name__)
 
+bot = Bot(follow_delay = delay_to_follow)
+bot.login(username = config.username, password = config.password)
+
+uname = ""
 delay_to_follow = 60
 estimated_time = 0
 
@@ -35,8 +40,7 @@ def signup():
     followerz = followers(uname)
     print(followerz)
     estimated_time = followerz*delay_to_follow/60
-    #print(qwerty)
-    #############
+
     class ThreadingExample(object):
         """ Threading example class
         The run() method will be started and it will run in the background
@@ -56,27 +60,17 @@ def signup():
 
         def run(self):
             """ Method that runs forever """
-            #while True:
-                # Do something
-                #print('Doing something imporant in the background')
 
             #follow(uname)
             print("guza mi")
             print( send( "<@&693878676785463297>" + " going to follow " + uname) )
             time.sleep(self.interval)
 
-    #############
-    #follow(uname)
+
     example = ThreadingExample()
     return   render_template('index.html', estimated_time = estimated_time)
-    #return  '{} {} {}'.format("U have to wait ", estimated_time, " before following another user")
 
 
-
-
-
-bot = Bot(follow_delay = delay_to_follow)
-bot.login(username = config.username, password = config.password)
 
 def send( message ):
 
@@ -108,14 +102,7 @@ def followers (uname):
 
 def follow(uname):
     try:
-        #bot.upload_photo("myimg.jpg",caption)
-        #bot.follow_followers(username)
-        #follow-va vs hora koito dadeniqt username sledva
         print(uname)
-
         bot.follow_following(uname)
-        #follow-va vs hora koito sledvat dadeniqt username
-        #print( send( "<@&693878676785463297>" + " a new post has been uploaded to instagram via your script") )
-
     except:
         pass
