@@ -16,6 +16,9 @@ from instaloader import Instaloader, Profile
 from flask import request, redirect, render_template
 from flask import Flask, Response
 
+uname = ""
+delay_to_follow = 60
+estimated_time = 0
 
 L = Instaloader()
 
@@ -24,9 +27,7 @@ app = Flask(__name__)
 bot = Bot(follow_delay = delay_to_follow)
 bot.login(username = config.username, password = config.password)
 
-uname = ""
-delay_to_follow = 60
-estimated_time = 0
+
 
 @app.route('/')
 def index():
