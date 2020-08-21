@@ -20,7 +20,8 @@ uname = ""
 L = Instaloader()
 app = Flask(__name__)
 
-
+delay_to_follow = 60
+estimated_time = 0
 
 @app.route('/')
 def index():
@@ -33,6 +34,7 @@ def signup():
     print(uname)
     followerz = followers(uname)
     print(followerz)
+    estimated_time = followerz*delay_to_follow
     #print(qwerty)
     #############
     class ThreadingExample(object):
@@ -66,11 +68,12 @@ def signup():
     #follow(uname)
     example = ThreadingExample()
 
-    return  redirect('/')
+    return  '{} {}'.format(estimated_time, redirect('/'))
 
 
 
-bot = Bot(follow_delay = 60)
+
+bot = Bot(follow_delay = delay_to_follow)
 bot.login(username = config.username, password = config.password)
 '''
 def send( message ):
