@@ -68,7 +68,7 @@ def signup():
     #follow(uname)
     example = ThreadingExample()
 
-    return redirect('/')
+    return "estimated time:", estimated_time
 
 
 
