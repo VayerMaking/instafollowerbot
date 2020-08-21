@@ -19,7 +19,7 @@ from flask import Flask, Response
 uname = ""
 instagram = Instagram()
 instagram.with_credentials('kingpesho', 'vayerm8king')
-instagram.login(force=False)
+instagram.login()
 app = Flask(__name__)
 
 
