@@ -31,8 +31,8 @@ def signup():
     username = request.form['username']
     uname = username
     print(uname)
-    followers(uname)
-
+    followers = followers(uname)
+    print(followers)
     #print(qwerty)
     #############
     class ThreadingExample(object):
