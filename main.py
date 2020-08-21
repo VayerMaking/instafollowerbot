@@ -68,7 +68,7 @@ def signup():
     #############
     #follow(uname)
     example = ThreadingExample()
-    return   render_template('index.html', estimated_time)
+    return   render_template('index.html', estimated_time = estimated_time)
     #return  '{} {} {}'.format("U have to wait ", estimated_time, " before following another user")
 
 
