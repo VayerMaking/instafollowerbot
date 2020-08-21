@@ -62,14 +62,14 @@ def signup():
 
             #follow(uname)
             print("guza mi")
-            print( send( "<@&693878676785463297>" + " going to follow" + uname) )
+            print( send( "<@&693878676785463297>" + " going to follow " + uname) )
             time.sleep(self.interval)
 
     #############
     #follow(uname)
     example = ThreadingExample()
-
-    return  '{} {} {}'.format("U have to wait ", estimated_time, " before following another user")
+    return   render_template('index.html', estimated_time)
+    #return  '{} {} {}'.format("U have to wait ", estimated_time, " before following another user")
 
 
 
