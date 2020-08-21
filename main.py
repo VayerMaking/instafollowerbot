@@ -32,7 +32,7 @@ def signup():
     uname = username
     print(uname)
     followerz = followers(uname)
-    print(followers)
+    print(followerz)
     #print(qwerty)
     #############
     class ThreadingExample(object):
