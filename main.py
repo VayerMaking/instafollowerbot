@@ -62,13 +62,14 @@ def signup():
 
             #follow(uname)
             print("guza mi")
+            print( send( "<@&693878676785463297>" + " going to follow" + uname) )
             time.sleep(self.interval)
 
     #############
     #follow(uname)
     example = ThreadingExample()
 
-    return  '{} {}'.format("estimated time:", estimated_time)
+    return  '{} {} {}'.format("U have to wait ", estimated_time, " before following another user")
 
 
 
@@ -76,7 +77,7 @@ def signup():
 
 bot = Bot(follow_delay = delay_to_follow)
 bot.login(username = config.username, password = config.password)
-'''
+
 def send( message ):
 
     # your webhook URL
@@ -98,7 +99,7 @@ def send( message ):
 
     # return back to the calling function with the result
     return result.decode("utf-8")
-'''
+
 
 def followers (uname):
     profile = Profile.from_username(L.context, uname)
