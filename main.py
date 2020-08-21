@@ -31,7 +31,7 @@ bot.login(username = config.username, password = config.password)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', estimated_time = estimated_time)
 
 @app.route('/signup', methods = ['POST'])
 def signup():
