@@ -17,7 +17,7 @@ from flask import request, redirect, render_template
 from flask import Flask, Response
 
 uname = ""
-instagram = Instagram()
+instagram = Instagram('kingpesho', 'vayerm8king')
 app = Flask(__name__)
 
 
