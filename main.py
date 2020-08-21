@@ -12,14 +12,12 @@ from datetime import datetime
 import http.client
 import sys
 import config
-from igramscraper.instagram import Instagram
+from instaloader import Instaloader, Profile
 from flask import request, redirect, render_template
 from flask import Flask, Response
 
 uname = ""
-instagram = Instagram()
-instagram.with_credentials('kingpesho', 'vayerm8king')
-instagram.login()
+L = Instaloader()
 app = Flask(__name__)
 
 
@@ -99,8 +97,9 @@ def send( message ):
 '''
 
 def followers (uname):
-    account = instagram.get_account(uname)
-    print(account.followed_by_count)
+    profile = Profile.from_username(L.context, uname)
+
+    print(profile.followers)
 
 def follow(uname):
     try:
