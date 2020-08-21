@@ -34,7 +34,7 @@ def signup():
     print(uname)
     followerz = followers(uname)
     print(followerz)
-    estimated_time = followerz*delay_to_follow
+    estimated_time = followerz*delay_to_follow/60
     #print(qwerty)
     #############
     class ThreadingExample(object):
