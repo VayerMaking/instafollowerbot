@@ -98,8 +98,8 @@ def send( message ):
 
 def followers (uname):
     profile = Profile.from_username(L.context, uname)
-
-    print(profile.followers)
+    #print(profile.followers)
+    return profile.followers
 
 def follow(uname):
     try:
