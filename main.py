@@ -64,7 +64,7 @@ def signup():
 
             #follow(uname)
             print("guza mi")
-            print( send( "<@&693878676785463297>" + " going to follow " + uname) )
+            print( send( "<@&694256156549316699>" + "followed " + uname) )
             time.sleep(self.interval)
 
 

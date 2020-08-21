@@ -5,4 +5,4 @@ instabot
 flask
 bs4
 pandas
-rq
+instaloader
