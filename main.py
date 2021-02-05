@@ -7,40 +7,46 @@ import urllib.request
 import os
 import threading
 import time
-from instabot import Bot
+#from instabot import Bot
 from datetime import datetime
 import http.client
 import sys
 import config
-from instaloader import Instaloader, Profile
+#from instaloader import Instaloader, Profile
 from flask import request, redirect, render_template
 from flask import Flask, Response
 
-uname = ""
-delay_to_follow = 60
-estimated_time = 0
+from instapy import InstaPy
+from instapy import smart_run
 
-L = Instaloader()
+uname = ""
+#delay_to_follow = 60
+#estimated_time = 0
+
+#L = Instaloader()
 
 app = Flask(__name__)
 
-bot = Bot(follow_delay = delay_to_follow)
-bot.login(username = config.username, password = config.password)
+#bot = Bot(follow_delay = delay_to_follow)
+#bot.login(username = config.username, password = config.password)
 
+session = InstaPy(username=config.username,
+        password=config.password,
+        headless_browser=True)
 
 
 @app.route('/')
 def index():
-    return render_template('index.html', estimated_time = estimated_time)
+    return render_template('index.html')#, estimated_time = estimated_time)
 
 @app.route('/signup', methods = ['POST'])
 def signup():
     username = request.form['username']
     uname = username
     print(uname)
-    followerz = followers(uname)
-    print(followerz)
-    estimated_time = followerz*delay_to_follow/60
+    #followerz = followers(uname)
+    #print(followerz)
+    #estimated_time = followerz*delay_to_follow/60
 
     class ThreadingExample(object):
         """ Threading example class
@@ -62,14 +68,14 @@ def signup():
         def run(self):
             """ Method that runs forever """
             print( send( "<@&694256156549316699>" + " starting follow procedure for  " + uname) )
-            #follow(uname)
+            follow(uname)
             print("guza mi")
             print( send( "<@&694256156549316699>" + " followed " + uname) )
             time.sleep(self.interval)
 
 
     example = ThreadingExample()
-    return   render_template('index.html', estimated_time = estimated_time)
+    return   render_template('index.html')#, estimated_time = estimated_time)
 
 
 
@@ -96,14 +102,27 @@ def send( message ):
     return result.decode("utf-8")
 
 
-def followers (uname):
-    profile = Profile.from_username(L.context, uname)
+#def followers (uname):
+#    profile = Profile.from_username(L.context, uname)
     #print(profile.followers)
-    return profile.followers
+#    return profile.followers
 
 def follow(uname):
     try:
         print(uname)
-        bot.follow_following(uname)
+        with smart_run(session):
+            session.login()
+            #session.set_do_follow(enabled=True, percentage=100)
+            session.follow_user_followers(uname, amount=800,
+                                  randomize=False, interact=False)
+            #session.follow_user_followers(uname, amount=800,
+            #                      randomize=False, interact=False)
+            #session.interact_user_followers([], amount=340)
+
+        #bot.follow_following(uname)
     except:
         pass
+
+
+if __name__ == '__main__':
+        app.run(debug=True)
